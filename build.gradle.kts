@@ -24,6 +24,12 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    implementation("net.java.dev.jna:jna:5.13.0")
+}
+
+tasks.withType<JavaExec> {
+    systemProperty("java.library.path", "$projectDir/src/main/resources/library")
 }
 
 kotlin {
